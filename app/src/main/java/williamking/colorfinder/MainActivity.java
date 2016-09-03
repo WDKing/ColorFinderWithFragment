@@ -81,7 +81,7 @@ public class MainActivity extends Activity {
 
             numPickRed.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
                 @Override
-                public void onValueChange(NumberPicker picker, int oldVal, int newVal) {
+                public void onValueChange(NumberPicker redPicker, int oldGreenVal, int newGreenVal) {
 
                 }
             });
@@ -93,7 +93,7 @@ public class MainActivity extends Activity {
 
             numPickGreen.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
                 @Override
-                public void onValueChange(NumberPicker picker, int oldVal, int newVal) {
+                public void onValueChange(NumberPicker greenPicker, int oldGreenVal, int newGreenVal) {
                 }
             });
             // numPickBlue
@@ -103,7 +103,7 @@ public class MainActivity extends Activity {
 
             numPickBlue.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
                 @Override
-                public void onValueChange(NumberPicker picker, int oldVal, int newVal) {
+                public void onValueChange(NumberPicker bluePicker, int oldBlueVal, int newBlueVal) {
                 }
             });
 

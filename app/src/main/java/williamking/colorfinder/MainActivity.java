@@ -2,6 +2,7 @@ package williamking.colorfinder;
 
 import android.app.Activity;
 import android.app.Fragment;
+import android.graphics.Canvas;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -58,6 +59,9 @@ public class MainActivity extends Activity {
         NumberPicker numPickGreen;
         NumberPicker numPickBlue;
 
+        Canvas colorCanvas;
+
+
 
         public ColorFinderFragment() {
         }
@@ -78,6 +82,7 @@ public class MainActivity extends Activity {
             numPickRed = (NumberPicker) getActivity().findViewById(R.id.numberPickerRed);
             numPickRed.setMaxValue(255);
             numPickRed.setMinValue(0);
+            Log.i("numPickRed","numPickRed number picker initialized.");
 
             numPickRed.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
                 @Override
@@ -90,6 +95,7 @@ public class MainActivity extends Activity {
             numPickGreen = (NumberPicker) getActivity().findViewById(R.id.numberPickerGreen);
             numPickGreen.setMaxValue(255);
             numPickGreen.setMinValue(0);
+            Log.i("numPickGreen","numPickGreen number picker initialized.");
 
             numPickGreen.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
                 @Override
@@ -100,6 +106,7 @@ public class MainActivity extends Activity {
             numPickBlue = (NumberPicker) getActivity().findViewById(R.id.numberPickerBlue);
             numPickBlue.setMaxValue(255);
             numPickBlue.setMinValue(0);
+            Log.i("numPickBlue","numPickBlue number picker initialized.");
 
             numPickBlue.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
                 @Override

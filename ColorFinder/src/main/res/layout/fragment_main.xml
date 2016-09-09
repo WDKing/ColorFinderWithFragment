@@ -22,7 +22,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_below="@+id/color_picker_instructions"
-        android:background="#e53935" />
+        android:background="@color/redNumberPicker" />
 
     <NumberPicker
         android:id="@+id/numberPickerGreen"
@@ -32,7 +32,7 @@
         android:layout_toRightOf="@+id/numberPickerRed"
         android:layout_toEndOf="@+id/numberPickerRed"
         android:layout_below="@+id/color_picker_instructions"
-        android:background="#00c853" />
+        android:background="@color/greenNumberPicker" />
 
     <NumberPicker
         android:id="@+id/numberPickerBlue"
@@ -42,12 +42,12 @@
         android:layout_toRightOf="@+id/numberPickerGreen"
         android:layout_toEndOf="@+id/numberPickerGreen"
         android:layout_below="@+id/color_picker_instructions"
-        android:background="#304ffe" />
+        android:background="@color/blueNumberPicker" />
 
     <SurfaceView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/colorSurface"
+        android:id="@+id/colorSurfaceView"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"

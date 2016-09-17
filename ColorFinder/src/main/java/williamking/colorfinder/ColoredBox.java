@@ -35,33 +35,28 @@ public class ColoredBox extends SurfaceView implements SurfaceHolder.Callback {
     /**
      * Takes a new red value and redraws the image
      *   in the colored box
-     * @param newRed new red value to use to redraw box
+     * @param newRed new red value to use to draw
      */
     public void updateBoxRed(int newRed) {
         boxRed = newRed;
-
-        // TODO Test Section
-
     }
 
     /**
      * Takes a new green value and redraws the image
      *   in the colored box.
-     * @param newGreen new green value with which to redraw the image
+     * @param newGreen new green value with which to draw the image
      */
     public void updateBoxGreen(int newGreen) {
         boxGreen = newGreen;
-        drawBox();
     }
 
     /**
      * Takes a new blue value and redraws the image
      *   in the colored box.
-     * @param newBlue new blue value with which to redraw the image
+     * @param newBlue new blue value with which to draw the image
      */
     public void updateBoxBlue(int newBlue) {
         boxBlue = newBlue;
-        drawBox();
     }
 
     private void drawBox() {

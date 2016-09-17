@@ -7,54 +7,60 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="williamking.colorfinder.MainActivity" >
+    tools:context="williamking.colorfinder.MainIntent" >
 
 
     <TextView
-        android:id="@+id/color_picker_instructions"
+        android:id="@+id/color_picker_instructions_intent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/color_picker_instructions"
         />
 
     <NumberPicker
-        android:id="@+id/numberPickerRed"
+        android:id="@+id/numberPickerRed_intent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_below="@+id/color_picker_instructions"
+        android:layout_below="@+id/color_picker_instructions_intent"
         android:background="@color/redNumberPicker" />
 
     <NumberPicker
-        android:id="@+id/numberPickerGreen"
+        android:id="@+id/numberPickerGreen_intent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_toRightOf="@+id/numberPickerRed"
-        android:layout_toEndOf="@+id/numberPickerRed"
-        android:layout_below="@+id/color_picker_instructions"
+        android:layout_toRightOf="@+id/numberPickerRed_intent"
+        android:layout_toEndOf="@+id/numberPickerRed_intent"
+        android:layout_below="@+id/color_picker_instructions_intent"
         android:background="@color/greenNumberPicker" />
 
     <NumberPicker
-        android:id="@+id/numberPickerBlue"
+        android:id="@+id/numberPickerBlue_intent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_toRightOf="@+id/numberPickerGreen"
-        android:layout_toEndOf="@+id/numberPickerGreen"
-        android:layout_below="@+id/color_picker_instructions"
+        android:layout_toRightOf="@+id/numberPickerGreen_intent"
+        android:layout_toEndOf="@+id/numberPickerGreen_intent"
+        android:layout_below="@+id/color_picker_instructions_intent"
         android:background="@color/blueNumberPicker" />
 
     <SurfaceView
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/colorSurfaceView"
+        android:layout_height="200dp"
+        android:id="@+id/colorSurfaceView_intent"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_alignParentBottom="true"
-        android:layout_alignRight="@+id/numberPickerBlue"
-        android:layout_alignEnd="@+id/numberPickerBlue"
-        android:layout_below="@+id/numberPickerRed" />
+        android:layout_alignRight="@+id/numberPickerBlue_intent"
+        android:layout_alignEnd="@+id/numberPickerBlue_intent"
+        android:layout_below="@+id/numberPickerRed_intent" />
 
+    <Button
+        android:layout_width="50dp"
+        android:layout_height="30dp"
+        android:id="@+id/buttonToSendIntent"
+        android:layout_below="@id/colorSurfaceView_intent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true" />
 
 </RelativeLayout>

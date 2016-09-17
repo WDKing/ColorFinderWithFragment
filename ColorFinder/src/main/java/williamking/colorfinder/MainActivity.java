@@ -20,42 +20,25 @@ import android.widget.TextView;
 public class MainActivity extends Activity {
 
     // Variables
-    static ColoredBox colorChanging;
-    // TODO static Canvas colorCanvas;
-    // TODO static Bitmap colorBitmap;
-    // TODO static DisplayMetrics colorMetrics;
+
+    // Variables used to draw the color
+    ColoredBox colorChanging;
     SurfaceView colorSurface;
 
+    // Number pickers used to choose the color.
     NumberPicker numPickRed;
     NumberPicker numPickGreen;
     NumberPicker numPickBlue;
 
 
-
+    // Overridden Methods
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        /*
-        if (savedInstanceState == null) {
-            getFragmentManager().beginTransaction()
-                    .add(R.id.container, new ColorFinderFragment()).commit();
-        }
-        */
-
-        //TODO colorMetrics = new DisplayMetrics();
-        // TODO colorBitmap.createBitmap(colorMetrics, 0, 0, null );
-        // TODO colorChanging = new ColoredBox(getApplicationContext());
-        // TODOcolorCanvas = new Canvas(colorBitmap);
-        // TODO colorSurface = (SurfaceView) findViewById(R.id.colorSurfaceView);
-        // TODO Remove Next Lines, insert redrawSurfaceDisplay(colorSurface, colorChanging);
-        // TODO colorSurface.setBackgroundColor(0);
-        // TODO colorSurface.refreshDrawableState();
-
-
+        // Initialize SurfaceView with standard color.
         colorChanging = new ColoredBox(getApplicationContext());
-        // TODOcolorCanvas = new Canvas(colorBitmap);
         colorSurface = (SurfaceView) findViewById(R.id.colorSurfaceView);
 
         if(colorSurface == null) Log.i("colorSurface","colorSurface is null");
@@ -66,9 +49,6 @@ public class MainActivity extends Activity {
             colorSurface.refreshDrawableState();
         }
 
-
-
-
         // numPickRed
         numPickRed = (NumberPicker) findViewById(R.id.numberPickerRed);
         numPickRed.setMaxValue(255);
@@ -78,11 +58,11 @@ public class MainActivity extends Activity {
         numPickRed.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
             @Override
             public void onValueChange(NumberPicker redPicker, int oldRedVal, int newRedVal) {
-                //TODO same as above
-                colorSurface.setBackgroundColor(Color.rgb(255,0,0));
-                colorSurface.refreshDrawableState();
+                Log.i("numPickRed","Value change listener, new value: " + newRedVal);
+                colorChanging.updateBoxRed(newRedVal);
+                redrawSurfaceDisplay(colorSurface, colorChanging);
             }
-        });
+        }); // numPickRed.setOnValueChangedListener
 
         // numPickGreen
         numPickGreen = (NumberPicker) findViewById(R.id.numberPickerGreen);
@@ -93,11 +73,12 @@ public class MainActivity extends Activity {
         numPickGreen.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
             @Override
             public void onValueChange(NumberPicker greenPicker, int oldGreenVal, int newGreenVal) {
-
-                colorSurface.setBackgroundColor(Color.rgb(0,255,0));
-                colorSurface.refreshDrawableState();
+                Log.i("numPickGreen","Value change listener, new value: " + newGreenVal);
+                colorChanging.updateBoxGreen(newGreenVal);
+                redrawSurfaceDisplay(colorSurface, colorChanging);
             }
-        });
+        });  // numPickGreen.setOnValueChangedListener
+
         // numPickBlue
         numPickBlue = (NumberPicker) findViewById(R.id.numberPickerBlue);
         numPickBlue.setMaxValue(255);
@@ -107,22 +88,21 @@ public class MainActivity extends Activity {
         numPickBlue.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
             @Override
             public void onValueChange(NumberPicker bluePicker, int oldBlueVal, int newBlueVal) {
+                Log.i("numPickBlue","Value change listener, new value: " + newBlueVal);
+                colorChanging.updateBoxBlue(newBlueVal);
+                redrawSurfaceDisplay(colorSurface, colorChanging);
 
-                colorSurface.setBackgroundColor(Color.rgb(0,0,255));
-                colorSurface.refreshDrawableState();
             }
-        });
+        });  // numPickBlue.setOnValueChangedListener
 
-
-
-    }
+    } // onCreate
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
-    }
+    }  // onCreateOptionsMenu
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -137,8 +117,10 @@ public class MainActivity extends Activity {
         }
 
         return super.onOptionsItemSelected(item);
-    }
+    }  // onOptionsItemSelected
 
+
+    // Created Methods
     /**
      * Method to initialize the redraw of the background of the surface view
      * Method created to remove repetitive calls.
@@ -147,11 +129,15 @@ public class MainActivity extends Activity {
      * @param colorsToUse the ColoredBox object that controls the color
      */
     void redrawSurfaceDisplay(SurfaceView surfaceToRedraw, ColoredBox colorsToUse) {
+        Log.i("redrawSurfaceDisplay","Red: " + colorsToUse.boxRed
+                                    + ", Green: " + colorsToUse.boxGreen
+                                    + ", Blue: " + colorsToUse.boxBlue);
         surfaceToRedraw.setBackgroundColor( Color.rgb(colorsToUse.boxRed,
                                                       colorsToUse.boxGreen,
                                                       colorsToUse.boxBlue) );
         surfaceToRedraw.refreshDrawableState();
-    }
-}
+    }  // redrawSurfaceDisplay
+
+}  // MainActivity
 
 

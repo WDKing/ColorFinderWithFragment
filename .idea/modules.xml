@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/ColorFinder/app.iml" filepath="$PROJECT_DIR$/ColorFinder/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ColorFinder/ColorFinder.iml" filepath="$PROJECT_DIR$/ColorFinder/ColorFinder.iml" />
       <module fileurl="file://$PROJECT_DIR$/ColorFinderWithFragment.iml" filepath="$PROJECT_DIR$/ColorFinderWithFragment.iml" />
     </modules>
   </component>
